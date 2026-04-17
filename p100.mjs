@@ -24,6 +24,7 @@ export default {
             lookup: {"door_window": 3, "object": 5},
             description: "Device operating mode",
             access: "STATE_SET",
+            entityCategory: "config",
         }),
         m.enumLookup({
             name: "door_window_type",
@@ -35,13 +36,14 @@ export default {
             entityCategory: "config",
         }),
         m.numeric({
-            name: "motion_sensitivity",
+            name: "sensitivity",
             cluster: "manuSpecificLumi",
             attribute: {ID: 0x010c, type: 0x20},
             valueMin: 1,
             valueMax: 10,
             description: "Detection sensitivity (1 = low, 10 = high)",
             access: "STATE_SET",
+            entityCategory: "config",
         }),
         m.numeric({
             name: 'report_interval',
@@ -137,6 +139,7 @@ export default {
             lookup: {"normal": 1, "abnormal": 2},
             description: "Mounting orientation check — 'abnormal' when the sensor is incorrectly installed or needs calibration",
             access: "STATE",
+            entityCategory: "diagnostic",
         }),
     ],
 };
