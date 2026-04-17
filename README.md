@@ -28,7 +28,7 @@ The P100 has **two mutually-exclusive operating modes** set via `device_mode`:
 | Mode | Purpose | Active exposures |
 | --- | --- | --- |
 | `object` | Watches an object for movement, vibration, tilt, tap, orientation, fall | `action`, `orientation` |
-| `door window` | Reports a door/window as open/closed using internal motion inference | `contact` |
+| `door_window` | Reports a door/window as open/closed using internal motion inference | `contact` |
 
 The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and `door_window_type` only have effect in their respective modes.
 
@@ -51,7 +51,7 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 
 | Exposure | Type | Range / Values | Description |
 | --- | --- | --- | --- |
-| `device_mode` | enum | `door window`, `object` | Operating mode (see above) |
+| `device_mode` | enum | `door_window`, `object` | Operating mode (see above) |
 | `door_window_type` | enum | `casement_window`, `hopper_window`, `composite_window`, `hinged_door` | Door/window profile (only relevant in door/window mode) |
 | `motion_sensitivity` | numeric | 1–10 | Detection sensitivity (1 = low, 10 = high) |
 | `report_interval` | numeric | 5–300 seconds | How often the device reports state |
