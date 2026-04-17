@@ -38,8 +38,8 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 
 | Exposure | Values | Notes |
 | --- | --- | --- |
-| `action` | `triple tap`, `movement`, `vibration`, `orientation`, `fall` | Published momentarily on each detected event |
-| `orientation` | `face up`, `face down`, `vertical`, `tilt` | Last reported orientation; meaningful when `action = orientation` |
+| `action` | `triple_tap`, `movement`, `vibration`, `orientation`, `fall` | Published momentarily on each detected event |
+| `orientation` | `face_up`, `face_down`, `vertical`, `tilt` | Last reported orientation; meaningful when `action = orientation` |
 
 ### Contact (door/window mode)
 
@@ -52,7 +52,7 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 | Exposure | Type | Range / Values | Description |
 | --- | --- | --- | --- |
 | `device_mode` | enum | `door window`, `object` | Operating mode (see above) |
-| `door_window_type` | enum | `casement window`, `hopper window`, `composite window`, `hinged door` | Door/window profile (only relevant in door/window mode) |
+| `door_window_type` | enum | `casement_window`, `hopper_window`, `composite_window`, `hinged_door` | Door/window profile (only relevant in door/window mode) |
 | `motion_sensitivity` | numeric | 1–10 | Detection sensitivity (1 = low, 10 = high) |
 | `report_interval` | numeric | 5–300 seconds | How often the device reports state |
 | `orientation_detection` | binary | ON / OFF | Enable orientation event reporting (object mode) |
