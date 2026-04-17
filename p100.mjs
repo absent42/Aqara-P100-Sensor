@@ -1,7 +1,7 @@
 import * as lumi from "zigbee-herdsman-converters/lib/lumi";
 import * as m from "zigbee-herdsman-converters/lib/modernExtend";
 
-const {lumiModernExtend} = lumi;
+const {lumiModernExtend, manufacturerCode} = lumi;
 
 export default {
     zigbeeModel: ["lumi.vibration.agl002"],
@@ -25,6 +25,7 @@ export default {
             description: "Device operating mode",
             access: "STATE_SET",
             entityCategory: "config",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.enumLookup({
             name: "door_window_type",
@@ -34,6 +35,7 @@ export default {
             description: "Door/window type (applies when device_mode = door window)",
             access: "STATE_SET",
             entityCategory: "config",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.numeric({
             name: "sensitivity",
@@ -44,6 +46,7 @@ export default {
             description: "Detection sensitivity (1 = low, 10 = high)",
             access: "STATE_SET",
             entityCategory: "config",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.numeric({
             name: 'report_interval',
@@ -55,6 +58,7 @@ export default {
             description: "Reporting interval in seconds",
             access: "STATE_SET",
             entityCategory: "config",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.binary({
             name: "orientation_detection",
@@ -64,6 +68,7 @@ export default {
             valueOff: ["OFF", 0],
             description: "Enable orientation event detection",
             access: "STATE_SET",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.binary({
             name: "movement_detection",
@@ -73,6 +78,7 @@ export default {
             valueOff: ["OFF", 0],
             description: "Enable movement event detection",
             access: "STATE_SET",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.binary({
             name: "fall_detection",
@@ -82,6 +88,7 @@ export default {
             valueOff: ["OFF", 0],
             description: "Enable fall event detection",
             access: "STATE_SET",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.binary({
             name: "vibration_detection",
@@ -91,6 +98,7 @@ export default {
             valueOff: ["OFF", 0],
             description: "Enable vibration event detection",
             access: "STATE_SET",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.binary({
             name: "triple_tap_detection",
@@ -100,6 +108,7 @@ export default {
             valueOff: ["OFF", 0],
             description: "Enable triple-tap event detection",
             access: "STATE_SET",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         m.enumLookup({
             name: "orientation",
@@ -108,6 +117,7 @@ export default {
             lookup: {"face_up": 1, "face_down": 2, "vertical": 3, "tilt": 4},
             description: "Last reported orientation (relevant when action = orientation)",
             access: "STATE",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
         //    
         // manuSpecificLumi 0x01f3 is reported with every event but only ever fires true — no information beyond `action`, so not decoded.
@@ -140,6 +150,7 @@ export default {
             description: "Mounting orientation check — 'abnormal' when the sensor is incorrectly installed or needs calibration",
             access: "STATE",
             entityCategory: "diagnostic",
+            zigbeeCommandOptions: {manufacturerCode},
         }),
     ],
 };
