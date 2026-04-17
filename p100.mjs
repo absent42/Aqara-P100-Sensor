@@ -112,7 +112,7 @@ export default {
             cluster: "closuresDoorLock",
             attribute: {ID: 0x0055, type: 0x21},
             actionLookup: {
-                "triple tap": 0,
+                "triple_tap": 0,
                 "movement": 1,
                 "vibration": 2,
                 "orientation": 3,
