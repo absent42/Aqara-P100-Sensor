@@ -13,7 +13,7 @@ export default {
         lumiModernExtend.addManuSpecificLumiCluster(),
         lumiModernExtend.lumiBattery({
             voltageAttribute: 0x17,
-            percentageAtrribute: 0x18,
+            percentageAttribute: 0x18,
         }),
         lumiModernExtend.lumiZigbeeOTA(),
 
