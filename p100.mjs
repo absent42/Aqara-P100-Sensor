@@ -7,15 +7,13 @@ export default {
     zigbeeModel: ["lumi.vibration.agl002"],
     model: "DWZTCGQ11LM",
     vendor: "Aqara",
-    description: "P100 multi-state sensor",
+    description: "Multi-state sensor P100",
     
     extend: [
-        m.quirkCheckinInterval("1_HOUR"),
         lumiModernExtend.addManuSpecificLumiCluster(),
-        lumiModernExtend.lumiPreventReset(),
         lumiModernExtend.lumiBattery({
             voltageAttribute: 0x17,
-            percentageAtrribute: 0x18,
+            percentageAtrribute: 0x18, // typo intentional — matches z-h-c lumiBattery() arg name
         }),
         lumiModernExtend.lumiZigbeeOTA(),
 
@@ -121,9 +119,7 @@ export default {
             access: "STATE",
             zigbeeCommandOptions: {manufacturerCode},
         }),
-        //    
-        // manuSpecificLumi 0x01f3 is reported with every event but only ever fires true — no information beyond `action`, so not decoded.
-        //
+        // 0x01f3 fires true on every detection but never resets — no signal beyond `action`, not exposed.
         m.actionEnumLookup({
             cluster: "closuresDoorLock",
             attribute: {ID: 0x0055, type: 0x21},
