@@ -5,6 +5,11 @@ An external converter for the [Aqara P100 Multi-State Sensor](https://www.aqara.
 - **Zigbee model:** `lumi.vibration.agl002`
 - **Aqara model:** `DWZTCGQ11LM`
 
+## Requirements
+
+- Aqara Multi-State Sensor with Zigbee firmware installed
+- Zigbee2MQTT v2.9.2+
+
 ## Installation
 
 1. In Zigbee2MQTT go to **Settings > Dev Console > External Converters**
