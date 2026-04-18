@@ -10,7 +10,9 @@ export default {
     description: "Multi-state sensor P100",
     
     extend: [
+        m.quirkCheckinInterval("1_HOUR"),
         lumiModernExtend.addManuSpecificLumiCluster(),
+        lumiModernExtend.lumiPreventReset(),
         lumiModernExtend.lumiBattery({
             voltageAttribute: 0x17,
             percentageAtrribute: 0x18, // typo intentional — matches z-h-c lumiBattery() arg name
