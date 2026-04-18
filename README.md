@@ -12,7 +12,7 @@ An external converter for the [Aqara P100 Multi-State Sensor](https://www.aqara.
 3. Name it `p100.mjs`
 4. Paste in the code
 5. Click **Save**
-6. Make you you have events enabled in Z2M HA integration settings
+6. Make sure you have events enabled in the Z2M HA integration settings
 7. Restart Zigbee2MQTT
 
 ## Pairing the device
@@ -21,6 +21,7 @@ An external converter for the [Aqara P100 Multi-State Sensor](https://www.aqara.
 2. Hold the button on the P100 for 5 seconds
 3. The LED will flash blue several time them pulse purple
 4. It should be recognised in Z2M and have a cyan coloured label "**Supported: external**"
+5. Calibrate the device according to the [user manual](https://store-support.aqara.com/products/multi-state-sensor-p100)
 
 ## Operating Modes
 
