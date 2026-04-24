@@ -39,6 +39,8 @@ The P100 has **two mutually-exclusive operating modes** set via `device_mode`:
 
 The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and `door_window_type` only have effect in their respective modes.
 
+*Note: Changing the setting of the sensor requires an on-device button press*
+
 ## Exposures
 
 ### Events (object mode)
