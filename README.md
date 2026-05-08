@@ -1,9 +1,9 @@
-# Aqara P100 Multi-State Sensor — Zigbee2MQTT External Converter
+# Aqara Multi-State Sensor P100 — Zigbee2MQTT External Converter & ZHA Custom Quirk
 
-An external converter for the [Aqara P100 Multi-State Sensor](https://www.aqara.com/en/product/multi-state-sensor-p100/), reverse-engineered from Zigbee packet captures.
+A Zigbee2MQTT external converter and ZHA custom quirk for the [Aqara Multi-State Sensor P100](https://www.aqara.com/en/product/multi-state-sensor-p100/), reverse-engineered from Zigbee packet captures.
 
 - **Zigbee model:** `lumi.vibration.agl002`
-- **Aqara model:** `DWZTCGQ11LM`
+- **Aqara model:** `DWZTCGQ11LM
 
 ## Requirements
 
@@ -45,7 +45,7 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 
 | Exposure | Values | Notes |
 | --- | --- | --- |
-| `action` | `triple_tap`, `movement`, `vibration`, `orientation`, `fall` | Published momentarily on each detected event |
+| `action` | `triple_tap`, `movement`, `vibration`, `orientation`, `fall`, `static` | Published momentarily on each detected event |
 | `orientation` | `face_up`, `face_down`, `vertical`, `tilt` | Last reported orientation; meaningful when `action = orientation` |
 
 ### Contact (door/window mode)
@@ -76,4 +76,4 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 | --- | --- | --- |
 | `battery` | 0–100 % | From the Aqara bundled buffer (attribute 0x00f7, TLV field 0x18) |
 | `voltage` | mV | From the same buffer (TLV field 0x17) |
-| `device_posture` | `normal`, `abnormal` | Mounting orientation check — `abnormal` when installed incorrectly or needs calibration |
+| `device_posture` | `normal`, `abnormal` | Mounting orientation check for door/window installtion — `abnormal` when installed incorrectly or needs calibration |
