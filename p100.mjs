@@ -24,7 +24,6 @@ export default {
     description: "Multi-state sensor P100",
     
     extend: [
-        m.quirkCheckinInterval("1_HOUR"),
         lumiModernExtend.addManuSpecificLumiCluster(),
         lumiModernExtend.lumiPreventReset(),
         lumiModernExtend.lumiBattery({
