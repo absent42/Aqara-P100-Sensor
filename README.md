@@ -1,6 +1,6 @@
-# Aqara Multi-State Sensor P100 — Zigbee2MQTT External Converter & ZHA Custom Quirk
+# Aqara Multi-State Sensor P100 — Zigbee2MQTT External Converter
 
-A Zigbee2MQTT external converter and ZHA custom quirk for the [Aqara Multi-State Sensor P100](https://www.aqara.com/en/product/multi-state-sensor-p100/), reverse-engineered from Zigbee packet captures.
+A Zigbee2MQTT external converter for the [Aqara Multi-State Sensor P100](https://www.aqara.com/en/product/multi-state-sensor-p100/), reverse-engineered from Zigbee packet captures.
 
 - **Zigbee model:** `lumi.vibration.agl002`
 - **Aqara model:** `DWZTCGQ11LM
