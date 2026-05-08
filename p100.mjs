@@ -3,6 +3,20 @@ import * as m from "zigbee-herdsman-converters/lib/modernExtend";
 
 const {lumiModernExtend, manufacturerCode} = lumi;
 
+// 0x01f3 reports `true` when the device becomes still after any motion event.
+// The `false` transition is not reliably emitted
+// Surface as an additional `action` value so it flows through the
+// same event stream as the five primary action codes.
+const fzStaticState = {
+    cluster: "manuSpecificLumi",
+    type: ["attributeReport", "readResponse"],
+    convert: (_model, msg) => {
+        if (msg.data.hasOwnProperty("499") && msg.data["499"] === true) {
+            return {action: "static_state"};
+        }
+    },
+};
+
 export default {
     zigbeeModel: ["lumi.vibration.agl002"],
     model: "DWZTCGQ11LM",
@@ -15,7 +29,7 @@ export default {
         lumiModernExtend.lumiPreventReset(),
         lumiModernExtend.lumiBattery({
             voltageAttribute: 0x17,
-            percentageAtrribute: 0x18, // typo intentional — matches z-h-c lumiBattery() arg name
+            percentageAttribute: 0x18,
         }),
         lumiModernExtend.lumiZigbeeOTA(),
 
@@ -121,7 +135,10 @@ export default {
             access: "STATE",
             zigbeeCommandOptions: {manufacturerCode},
         }),
-        // 0x01f3 fires true on every detection but never resets — no signal beyond `action`, not exposed.
+        // The 5 primary events come from cluster 0x0101 attr 0x0055.
+        // `static_state` is a 6th value sourced from manuSpecificLumi 0x01f3 (the
+        // Aqara `static_state` flag) — fired when the device becomes still after
+        // motion. Wired via fzStaticState in the top-level fromZigbee.
         m.actionEnumLookup({
             cluster: "closuresDoorLock",
             attribute: {ID: 0x0055, type: 0x21},
@@ -132,6 +149,7 @@ export default {
                 "orientation": 3,
                 "fall": 4,
             },
+            extraActions: ["static_state"],
         }),
         m.binary({
             name: "contact",
@@ -153,4 +171,5 @@ export default {
             zigbeeCommandOptions: {manufacturerCode},
         }),
     ],
+    fromZigbee: [fzStaticState],
 };
