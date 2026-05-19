@@ -11,7 +11,7 @@ const fzStatic = {
     cluster: "manuSpecificLumi",
     type: ["attributeReport", "readResponse"],
     convert: (_model, msg) => {
-        if (msg.data.hasOwnProperty("499") && msg.data["499"] === true) {
+        if (msg.data["499"] === 1) {
             return {action: "static"};
         }
     },
