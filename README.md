@@ -41,14 +41,16 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 
 ## Exposures
 
-### Events (object mode)
+**Note: In door/window mode movement/vibration/orientation etc are NOT reported**
+
+### Events (**object mode only**)
 
 | Exposure | Values | Notes |
 | --- | --- | --- |
 | `action` | `triple_tap`, `movement`, `vibration`, `orientation`, `fall`, `static` | Published momentarily on each detected event |
 | `orientation` | `face_up`, `face_down`, `vertical`, `tilt` | Last reported orientation; meaningful when `action = orientation` |
 
-### Contact (door/window mode)
+### Contact (**door/window mode only**)
 
 | Exposure | Values | Notes |
 | --- | --- | --- |
