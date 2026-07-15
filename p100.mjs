@@ -209,6 +209,15 @@ export default {
             zigbeeCommandOptions: {manufacturerCode},
         }),
         m.numeric({
+            name: "peak_tilt_angle",
+            cluster: "manuSpecificLumi",
+            attribute: {ID: 0x01f7, type: 0x39},
+            unit: "°",
+            description: "Peak angle of tilt",
+            access: "STATE",
+            zigbeeCommandOptions: {manufacturerCode},
+        }),
+        m.numeric({
             name: "vibration_duration",
             cluster: "manuSpecificLumi",
             attribute: {ID: 0x01fc, type: 0x21},
