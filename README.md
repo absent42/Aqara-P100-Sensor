@@ -49,6 +49,11 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 | --- | --- | --- |
 | `action` | `triple_tap`, `movement`, `vibration`, `orientation`, `fall`, `static` | Published momentarily on each detected event |
 | `orientation` | `face_up`, `face_down`, `vertical`, `tilt` | Last reported orientation; meaningful when `action = orientation` |
+| `initial_tilt_angle` | ° | Start angle of tilt |
+| `stationary_tilt_angle` | ° | End angle of tilt |
+| `tilt_angle_deviation` | ° | Change in angle of tilt |
+| `vibration_duration` | s | Duration of vibration event |
+| `motion_duration` | s | Duration of motion event |
 
 ### Contact (**door/window mode only**)
 
@@ -69,6 +74,7 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 | `fall_detection` | binary | ON / OFF | Enable fall event reporting (object mode) |
 | `vibration_detection` | binary | ON / OFF | Enable vibration event reporting (object mode) |
 | `triple_tap_detection` | binary | ON / OFF | Enable triple-tap event reporting (object mode) |
+| `remote_calibration` | button | `Calibrate` | Triggers the device's remote calibration routine |
 
 *Note: Changing the settings of the sensor requires an on-device button press*
 
