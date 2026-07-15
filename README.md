@@ -52,6 +52,7 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 | `initial_tilt_angle` | ° | Start angle of tilt |
 | `stationary_tilt_angle` | ° | End angle of tilt |
 | `tilt_angle_deviation` | ° | Change in angle of tilt |
+| `peak_tilt_angle` | ° | Peak angle of tilt |
 | `vibration_duration` | s | Duration of vibration event |
 | `motion_duration` | s | Duration of motion event |
 
