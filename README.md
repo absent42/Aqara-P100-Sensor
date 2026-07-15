@@ -49,6 +49,11 @@ The event-enable toggles (`movement_detection`, `vibration_detection`, etc.) and
 | --- | --- | --- |
 | `action` | `triple_tap`, `movement`, `vibration`, `orientation`, `fall`, `static` | Published momentarily on each detected event |
 | `orientation` | `face_up`, `face_down`, `vertical`, `tilt` | Last reported orientation; meaningful when `action = orientation` |
+
+### Measuments
+
+| Exposure | Values | Notes |
+| --- | --- | --- |
 | `initial_tilt_angle` | ° | Start angle of tilt |
 | `stationary_tilt_angle` | ° | End angle of tilt |
 | `tilt_angle_deviation` | ° | Change in angle of tilt |
