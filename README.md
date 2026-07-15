@@ -7,7 +7,7 @@ A Zigbee2MQTT external converter for the [Aqara Multi-State Sensor P100](https:/
 
 ## Requirements
 
-- Aqara Multi-State Sensor with Zigbee firmware installed
+- Aqara Multi-State Sensor with Zigbee firmware 0.0.0_0024 installed
 - Zigbee2MQTT v2.9.2+
 
 ## Installation
